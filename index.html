@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aedion — Automated outreach infrastructure</title>
+<meta name="description" content="Aedion builds automated voice and SMS outreach programs for organizations that need to reach large numbers of people reliably, with consent and compliance built in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E151C;
+    --ink-soft:#1B2833;
+    --paper:#F2F4F3;
+    --paper-dim:#C9D2D6;
+    --signal:#D98F2B;
+    --line:rgba(242,244,243,.14);
+    --maxw:960px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  a{color:var(--signal)}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--paper-dim);
+  }
+
+  /* ---- masthead ---- */
+  header{border-bottom:1px solid var(--line)}
+  .bar{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:20px;padding:26px 0;
+  }
+  .mark{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;font-size:22px;letter-spacing:-.01em;
+  }
+  .mark .dot{color:var(--signal)}
+
+  /* ---- hero ---- */
+  .hero{padding:86px 0 70px}
+  h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:500;
+    font-size:clamp(34px,5.6vw,60px);
+    line-height:1.08;
+    letter-spacing:-.02em;
+    margin:20px 0 0;
+    max-width:17ch;
+  }
+  h1 em{font-style:normal;color:var(--signal)}
+  .lede{
+    margin:26px 0 0;max-width:56ch;font-size:19px;color:var(--paper-dim);
+  }
+
+  /* signature: signal line */
+  .signal{margin:56px 0 0;height:34px;overflow:hidden}
+  .signal svg{display:block;width:100%;height:34px}
+  .signal path{
+    stroke:var(--signal);stroke-width:1.5;fill:none;
+    stroke-dasharray:1400;stroke-dashoffset:1400;
+    animation:trace 2.6s cubic-bezier(.2,.7,.3,1) .25s forwards;
+  }
+  @keyframes trace{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){
+    .signal path{animation:none;stroke-dashoffset:0}
+  }
+
+  /* ---- sections ---- */
+  section{padding:66px 0;border-top:1px solid var(--line)}
+  h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:500;font-size:26px;letter-spacing:-.01em;
+    margin:14px 0 0;
+  }
+  .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:44px 48px;margin-top:40px;
+  }
+  .item h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:18px;font-weight:500;margin:0 0 8px;
+  }
+  .item p{margin:0;color:var(--paper-dim);font-size:16px}
+  .item .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--signal);display:block;margin-bottom:12px;
+  }
+  .prose{max-width:62ch;color:var(--paper-dim);margin-top:26px}
+  .prose p{margin:0 0 16px}
+  .prose strong{color:var(--paper);font-weight:500}
+
+  /* ---- contact ---- */
+  .contact{
+    display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;margin-top:32px;
+  }
+  .contact .mail{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(22px,3.4vw,32px);
+    text-decoration:none;border-bottom:1px solid rgba(217,143,43,.4);
+    padding-bottom:2px;
+  }
+  .contact .mail:hover{border-bottom-color:var(--signal)}
+
+  /* ---- footer ---- */
+  footer{
+    border-top:1px solid var(--line);padding:34px 0 56px;
+    color:var(--paper-dim);font-size:14px;
+  }
+  .footrow{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:space-between}
+  .addr{font-style:normal}
+
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;gap:34px}
+    .hero{padding:60px 0 48px}
+    section{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="mark">Aedion<span class="dot">.</span></div>
+    <div class="eyebrow">Beverly, Massachusetts</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow">Automated outreach infrastructure</div>
+    <h1>Reaching people at scale, <em>one conversation at a time.</em></h1>
+    <p class="lede">Aedion builds and runs automated phone and text outreach programs for organizations that need to contact thousands of people reliably — and need every one of those contacts to be consented, recorded, and reportable.</p>
+
+    <div class="signal" aria-hidden="true">
+      <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+        <path d="M0,17 L280,17 L296,4 L312,30 L328,10 L344,24 L360,17 L520,17 L536,8 L552,26 L568,17 L760,17 L776,6 L792,28 L808,12 L824,22 L840,17 L1200,17"/>
+      </svg>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">What we do</div>
+      <h2>Two channels, one program.</h2>
+      <div class="grid">
+        <div class="item">
+          <span class="tag">Voice</span>
+          <h3>Interactive phone calls</h3>
+          <p>Automated calls that hold a real conversation: confirm who answered, ask questions, capture answers, and hand off to a live person when the moment calls for it.</p>
+        </div>
+        <div class="item">
+          <span class="tag">Messaging</span>
+          <h3>SMS that follows the same rules</h3>
+          <p>Text programs that share the same consent record, quiet hours, and reporting as the calls — so a person is never contacted twice by two systems that don't talk.</p>
+        </div>
+        <div class="item">
+          <span class="tag">Targeting</span>
+          <h3>The right people, the right message</h3>
+          <p>Programs adapt to what we know about each recipient, so the message changes with their situation instead of everyone hearing the same script.</p>
+        </div>
+        <div class="item">
+          <span class="tag">Reporting</span>
+          <h3>Results you can audit</h3>
+          <p>Every attempt, answer, and outcome is recorded and reportable — how many were reached, what they said, and what happened next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Who it's for</div>
+      <h2>Built for regulated outreach.</h2>
+      <div class="prose">
+        <p>Aedion's first programs serve <strong>health plans and healthcare organizations</strong> — appointment and screening reminders, prescription refill outreach, benefit and coverage notifications, member surveys, and care-team handoffs.</p>
+        <p>The same platform serves any organization with the same problem: <strong>a large list, a message that has to land, and rules about how people may be contacted.</strong> Financial services, government programs, education, and member associations all run outreach that looks like this.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">How we handle contact</div>
+      <h2>Consent is the default, not a setting.</h2>
+      <div class="prose">
+        <p>People are contacted only when the organization we work for has a lawful basis to reach them. Opting out is honored immediately, on every channel, and carries across programs.</p>
+        <p>Text programs honor <strong>STOP</strong> and <strong>HELP</strong> at the platform level. Calls and messages respect local quiet hours and attempt limits. Sensitive information is never left in a voicemail or with anyone other than the intended recipient.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h2>Talk to us about a program.</h2>
+      <div class="contact">
+        <a class="mail" href="mailto:info@aedion.io">info@aedion.io</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <div>© <span id="y">2026</span> Aedion. All rights reserved.</div>
+    <address class="addr">500 Cummings Center, Suite 6500A, Beverly, MA 01915</address>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
